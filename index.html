@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Generate blog posts with AI">
+    <title>Automated Blog Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Welcome to the Automated Blog Generator!</h1>
+            <button id="theme-toggle" type="button" aria-label="Toggle dark mode">🌙</button>
+        </header>
+
+        <form action="/" method="post" autocomplete="off">
+            <label for="prompt">Enter your blog topic or prompt:</label>
+            <textarea id="prompt" name="prompt" rows="5" cols="60"
+                placeholder="Enter your blog topic or prompt" required></textarea>
+            <input type="submit" value="Generate Blog">
+        </form>
+
+        {% if generated_blog %}
+        <div class="blog-content">
+            <h2>Generated Blog:</h2>
+            <div class="blog-text">{{ generated_blog | safe }}</div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById("theme-toggle");
+        const body = document.body;
+
+        function setTheme(theme) {
+            body.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+            themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+            themeToggle.setAttribute("aria-label", theme === "dark" ? "Toggle light mode" : "Toggle dark mode");
+        }
+
+        themeToggle.addEventListener("click", () => {
+            const currentTheme = body.getAttribute("data-theme");
+            setTheme(currentTheme === "dark" ? "light" : "dark");
+        });
+
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else {
+            setTheme("light");
+        }
+    </script>
+</body>
+</html>
