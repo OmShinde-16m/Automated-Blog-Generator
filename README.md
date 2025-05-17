@@ -148,4 +148,11 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
+### Output Screenshot 
+![WhatsApp Image 2025-05-01 at 23 52 30_8493fe6b](https://github.com/user-attachments/assets/2eaefa66-3aa5-45d5-bf40-e1f909930313)
+![WhatsApp Image 2025-05-01 at 23 47 05_bd0f17f5](https://github.com/user-attachments/assets/6fe4270c-e0c5-47e8-8cf7-1fccb19fecde)
+
+
+
+
 **Enjoy effortless blog creation with AI!**
