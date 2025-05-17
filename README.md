@@ -71,3 +71,85 @@ The result is a professional, structured blog post ready to be published or refi
 ```bash
 git clone https://github.com/your-username/automated-blog-generator.git
 cd automated-blog-generator
+
+
+### 3. Install Dependencies
+
+```bash
+pip install fastapi uvicorn python-dotenv groq jinja2
+Make sure to create a .env file in the project root with your Groq API key:
+
+ini
+Copy
+Edit
+GROQ_API_KEY=your_api_key_here
+4. Run the Application
+bash
+Copy
+Edit
+uvicorn main:app --reload
+The backend will run on http://127.0.0.1:8000.
+
+🧪 Usage
+Open your browser and go to: http://127.0.0.1:8000
+
+Enter your blog topic or idea into the input field.
+
+Click "Generate Blog".
+
+The AI-generated blog content will appear below the form.
+
+Use the moon/sun icon in the header to toggle between light and dark modes.
+
+🔗 API Endpoints
+Endpoint	Method	Description
+/	GET	Loads the homepage with prompt form
+/	POST	Accepts blog prompt and returns generated blog
+
+🛠️ Troubleshooting
+Common Issues
+API Key Error:
+
+Ensure GROQ_API_KEY is defined in the .env file.
+
+Template Not Found:
+
+Ensure the index.html and error.html are placed in the app/templates/ folder.
+
+Static Files Not Loading:
+
+CSS should be in app/static/style.css.
+
+🚀 Future Improvements
+Add multilingual blog generation support.
+
+Allow users to download blog as a .docx or .pdf.
+
+Integrate with a CMS (e.g., WordPress) for instant publishing.
+
+Add blog outline previews before generation.
+
+🤝 Contributing
+Contributions are welcome! Please follow these steps:
+
+Fork the repository.
+
+Create a feature branch:
+
+bash
+Copy
+Edit
+git checkout -b feature/your-feature
+Commit your changes:
+
+bash
+Copy
+Edit
+git commit -m "Add feature"
+Push to the branch:
+
+bash
+Copy
+Edit
+git push origin feature/your-feature
+Open a Pull Request.
